@@ -41,7 +41,7 @@ export async function renderRestaurant() {
       for (let key in res) {
         if (key.indexOf('ads') === 0) {
           mapBox.innerHTML = '';
-          mapTit.textContent = data.title;
+          // mapTit.textContent = data.title;
           mapBox.innerHTML += `
             <p>${res.map}</p>
             <iframe src="${res[key]}">

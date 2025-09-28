@@ -186,7 +186,7 @@ footer{
 	align-items: center;
 	color: #ddd;
 }
-.footer_bottom .ft_text  .txt_top > p:first-of-type:after{
+.footer_bottom .ft_text  .txt_top > p::after{
 	content: '';
 	display: inline-block;
 	width: 1px;
@@ -217,9 +217,6 @@ footer{
   .footer_bottom .ft_text p{
     justify-content: center;
   }
-  .footer_bottom .ft_text .txt_top > p:nth-of-type(2):after{
-    display: none;
-  }
   .footer_bottom .ft_text .txt_top > p::after{
     margin: 0 10px -2px 12px;
   }
@@ -230,5 +227,8 @@ footer{
     width: 100%;
     text-align: center;
     margin-top: 10px;
+  }
+  .footer_bottom .ft_text .txt_top > p:nth-of-type(2):after{
+    display: none;
   }
 }

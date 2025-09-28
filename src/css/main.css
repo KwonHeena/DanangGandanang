@@ -2,7 +2,7 @@
 
 /* 공통 */
 .main {
-  padding: 80px 0 120px;
+  padding: 80px 0 60px;
 }
 section .section_inner {
   max-width: 1500px;
@@ -63,6 +63,9 @@ section .tit .more_view a:hover {
 }
 
 @media screen and (max-width: 768px) {
+  .main {
+    padding: 80px 0 0;
+  }
   section .section_inner {
     padding: 6rem 0 0;
   }
@@ -77,7 +80,7 @@ section .tit .more_view a:hover {
 
 /* 섹션01 */
 .section01 .section_inner {
-  padding: 60px 0 0;
+  padding: 0;
   height: 100%;
 }
 .main_slide {
@@ -188,9 +191,6 @@ section .tit .more_view a:hover {
 }
 
 @media screen and (max-width: 768px) {
-  .section01 .section_inner {
-    padding: 30px 0 0;
-  }
   .main_slide ul .txt {
     top: 12%;
   }

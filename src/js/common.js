@@ -71,6 +71,15 @@ hamberger.addEventListener('click', () => {
   }
 });
 
+let depth1 = document.querySelectorAll('.gnb_depth1>a');
+depth1.forEach((item) => {
+  item.addEventListener('click', () => {
+    hamberger.classList.remove('on');
+    body.style.overflow = 'auto';
+    nav.classList.remove('active');
+  })
+})
+
 // 헤더 반응형
 function resizeW() {
   let bodyW = body.clientWidth;
