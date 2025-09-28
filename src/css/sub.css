@@ -50,9 +50,9 @@
     padding: 30px 0 58px;
   }
 }
-@media screen and (max-width: 768px) { 
+@media screen and (max-width: 768px) {
   #container {
-    padding: 60px 0 80px;
+    padding: 30px 0 80px;
   }
   .sub_container {
     margin: 60px auto 0;
@@ -63,7 +63,7 @@
   }
 }
 /* 숙소 */
-.hotel_wrap{
+.hotel_wrap {
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -80,11 +80,11 @@
   gap: 25px;
   position: relative;
 }
-.hotel_wrap > ul li:not(:last-of-type){
+.hotel_wrap > ul li:not(:last-of-type) {
   border-bottom: 1px solid var(--bd_color);
   padding-bottom: 40px;
 }
-.hotel_wrap > ul li .go_site{
+.hotel_wrap > ul li .go_site {
   position: absolute;
   bottom: 40px;
   right: 0;
@@ -95,7 +95,7 @@
   font-size: 1.5rem;
   transition: all 0.3s;
 }
-.hotel_wrap > ul li .go_site:hover{
+.hotel_wrap > ul li .go_site:hover {
   background: rgb(0 137 157);
 }
 .hotel_wrap > ul li .hotel_img {
@@ -111,7 +111,7 @@
   height: 100%;
   object-fit: cover;
 }
-.hotel_wrap > ul li .txtBox{
+.hotel_wrap > ul li .txtBox {
   flex: 1;
   margin-top: 15px;
   padding-bottom: 55px;
@@ -124,22 +124,22 @@
   flex: 1;
   margin-bottom: 15px;
 }
-.hotel_wrap > ul li .txtBox .sub_info{
+.hotel_wrap > ul li .txtBox .sub_info {
   font-size: 1.5rem;
   line-height: 22px;
 }
-.hotel_wrap > ul li .txtBox .sub_info p{
+.hotel_wrap > ul li .txtBox .sub_info p {
   display: flex;
   gap: 5px;
 }
-.hotel_wrap > ul li .txtBox .sub_info strong{
+.hotel_wrap > ul li .txtBox .sub_info strong {
   font-weight: 500;
   flex-shrink: 0;
 }
-.hotel_wrap > ul li .txtBox .sub_info p + p{
+.hotel_wrap > ul li .txtBox .sub_info p + p {
   margin-top: 10px;
 }
-.common_inform{
+.common_inform {
   font-size: 1.5rem;
   background: #f3f3f3;
   padding: 10px 15px;
@@ -147,11 +147,11 @@
   width: 100%;
   margin-bottom: 20px;
 }
-.common_inform::before{
+.common_inform::before {
   content: '!';
   width: 22px;
   height: 22px;
-  background: rgb(0 137 157);;
+  background: rgb(0 137 157);
   border-radius: 50%;
   text-align: center;
   color: #fff;
@@ -253,7 +253,7 @@
   border-radius: 5px;
 }
 @media screen and (max-width: 768px) {
-  .common_inform{
+  .common_inform {
     padding: 8px 12px;
     font-size: 1.4rem;
   }
@@ -266,11 +266,11 @@
   .hotel_wrap > ul {
     gap: 35px;
   }
-  .hotel_wrap > ul li{
+  .hotel_wrap > ul li {
     flex-direction: column;
     align-items: center;
   }
-  .hotel_wrap > ul li:not(:last-of-type){
+  .hotel_wrap > ul li:not(:last-of-type) {
     padding-bottom: 35px;
   }
   .hotel_wrap > ul li .txtBox {
@@ -279,13 +279,13 @@
     padding-bottom: 45px;
     width: 100%;
   }
-  .hotel_wrap > ul li .hotel_name{
+  .hotel_wrap > ul li .hotel_name {
     margin-bottom: 10px;
   }
-  .hotel_wrap > ul li .go_site{
+  .hotel_wrap > ul li .go_site {
     font-size: 1.4rem;
-      padding: 7px 12px;
-      bottom: 35px;
+    padding: 7px 12px;
+    bottom: 35px;
   }
   .hotel_wrap > ul li .hotel_img {
     max-width: 450px;
@@ -305,10 +305,9 @@
   .hotel_pop .in_img .img_list {
     gap: 8px;
   }
-  .hotel_pop .in_img .img_list > li button{
+  .hotel_pop .in_img .img_list > li button {
     max-height: 90px;
   }
-  
 }
 
 /* 맛집 */
@@ -362,7 +361,7 @@
   object-fit: cover;
   transition: all 0.5s;
 }
-.restaurant_wrap .inner_wrap > ul > li:hover .res_box .img_wrap img{
+.restaurant_wrap .inner_wrap > ul > li:hover .res_box .img_wrap img {
   transform: scale(1.1);
 }
 .restaurant_wrap .inner_wrap > ul > li .res_box .inform_wrap {
@@ -444,32 +443,32 @@
 .weather_wrap .weather_inner .left_wrap {
   background: url(../img/sub/img_phone.png) no-repeat center center;
   background-size: 327px;
-    width: 100%;
-    min-width: 327px;
-    height: 690px;
+  width: 100%;
+  min-width: 327px;
+  height: 690px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 30px;
   position: relative;
 }
-.weather_wrap .weather_inner .left_wrap:after{
-    content: "";
-    position: absolute;
-    max-width: 327px;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: -1;
-    background: #fff; 
+.weather_wrap .weather_inner .left_wrap:after {
+  content: '';
+  position: absolute;
+  max-width: 327px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  background: #fff;
 }
 .weather_wrap .weather_inner .left_wrap:before {
-  content: "";
+  content: '';
   position: absolute;
-      width: 100%;
-      aspect-ratio:  1 / 1;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   background: var(--k-color);
   border-radius: 100%;
   top: 50%;
@@ -479,7 +478,7 @@
   opacity: 0.1;
 }
 .weather_wrap .weather_inner .weather_icon {
-    display: inline-block;
+  display: inline-block;
   position: relative;
   padding-right: 60px;
 }
@@ -491,7 +490,7 @@
   font-size: 38px;
   font-weight: 500;
 }
-.weather_wrap .weather_inner .current{
+.weather_wrap .weather_inner .current {
   font-size: 1.6rem;
 }
 .weather_wrap .weather_inner .weather_txt {
@@ -501,7 +500,7 @@
   margin-top: 15px;
   font-size: 1.6rem;
 }
-.weather_wrap .weather_inner .weather_txt p:first-of-type::after{
+.weather_wrap .weather_inner .weather_txt p:first-of-type::after {
   content: '';
   display: inline-block;
   width: 1px;
@@ -530,7 +529,7 @@
 .weather_wrap .weather_inner .right_wrap p span {
   font-size: 2rem;
   font-weight: 500;
-  color: var(--k-color2)
+  color: var(--k-color2);
 }
 
 @media screen and (max-width: 1024px) {
@@ -545,7 +544,7 @@
     flex-direction: column;
     align-items: center;
   }
-  .weather_wrap .weather_inner .left_wrap:before{
+  .weather_wrap .weather_inner .left_wrap:before {
     width: 100%;
     max-width: 600px;
   }
@@ -559,7 +558,7 @@
   .weather_wrap .weather_inner .weather_icon .temp {
     font-size: 32px;
   }
-  .weather_wrap .weather_inner .right_wrap{
+  .weather_wrap .weather_inner .right_wrap {
     padding-top: 0;
   }
   .weather_wrap .weather_inner .left_wrap {
@@ -573,18 +572,17 @@
   .weather_wrap .weather_inner h3 {
     font-size: 2.2rem;
   }
-  .weather_wrap .weather_inner .weather_icon{
+  .weather_wrap .weather_inner .weather_icon {
     max-width: 160px;
     padding-right: 55px;
   }
   .weather_wrap .weather_inner .right_wrap p {
-      font-size: 1.6rem;
+    font-size: 1.6rem;
   }
   .weather_wrap .weather_inner .right_wrap p span {
     font-size: 1.8rem;
   }
 }
-
 
 /* 환율 */
 .exchange_wrap {
