@@ -84,6 +84,7 @@ section .tit .more_view a:hover {
   height: 100%;
 }
 .main_slide {
+  border-radius: 25px;
   overflow: hidden;
   position: relative;
   transition: transform 0.3s;
