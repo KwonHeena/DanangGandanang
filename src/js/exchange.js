@@ -1,40 +1,62 @@
 export async function initSub() {
-  const APIKYE = "ca4cafaaee024ba60d09e4e6";
-  // 429에러 – 너무많은요청
-  // const url = `https://v6.exchangerate-api.com/v6/${APIKYE}/latest/KRW`;
+  const APIKey = "ca4cafaaee024ba60d09e4e6";
+  const url = `https://v6.exchangerate-api.com/v6/${APIKey}/latest/KRW`;
+  const backUrl = "./src/data/exchange.json";
+  const localKey = "exchangeData";
+  const localTimeKey = "exchangeDataTime";
+  const oneHour = 3600000;
 
-  const url = "./src/data/exchange.json";
+  const storageData = localStorage.getItem(localKey);
+  const storageTime = localStorage.getItem(localTimeKey);
+  const now = Date.now();
+  let data;
 
-  try {
-    const res = await fetch(url);
-    const data = await res.json();
+  if (storageData && storageTime && now - Number(storageTime) < oneHour) {
+    data = JSON.parse(storageData);
+  } else {
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+      data = await res.json();
 
-    let koInput = document.getElementById("ko");
-    let vnInput = document.getElementById("vnd");
-    if (data.result === "success") {
-      let ko = data.conversion_rates.KRW;
-      let vn = data.conversion_rates.VND;
-
-      if (koInput && vnInput) {
-        // 초기값
-        koInput.value = 1000;
-        let commaV = koInput.value.replace(/,/g, "");
-
-        vnInput.value = (vn * Number(koInput.value))
-          .toFixed(0)
-          .toString()
-          .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-        koInput.addEventListener("input", () => {
-          vnInput.value = (vn * Number(koInput.value))
-            .toFixed(0)
-            .toString()
-            .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        });
-        koInput.value = commaV.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      if (data.result === "success") {
+        localStorage.setItem(localKey, JSON.stringify(data));
+        localStorage.setItem(localTimeKey, now.toString());
+      } else {
+        throw new Error("API 응답 실패");
+      }
+    } catch (e) {
+      console.warn("⚠️ API 호출 실패. 로컬 파일을 사용합니다.");
+      try {
+        const fallbackRes = await fetch(backUrl);
+        data = await fallbackRes.json();
+      } catch (err) {
+        console.error(err);
+        return;
       }
     }
-  } catch (e) {
-    console.error(e);
+  }
+
+  const koInput = document.getElementById("ko");
+  const vnInput = document.getElementById("vnd");
+
+  if (data.result === "success" && koInput && vnInput) {
+    const ko = data.conversion_rates.KRW;
+    const vn = data.conversion_rates.VND;
+
+    koInput.value = 1000;
+    const commaV = koInput.value.replace(/,/g, "");
+
+    vnInput.value = (vn * Number(koInput.value))
+      .toFixed(0)
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    koInput.addEventListener("input", () => {
+      vnInput.value = (vn * Number(koInput.value.replace(/,/g, "")))
+        .toFixed(0)
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    });
+
+    koInput.value = commaV.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 }
