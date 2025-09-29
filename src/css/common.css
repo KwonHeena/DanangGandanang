@@ -77,3 +77,25 @@ input:focus::placeholder, textarea:focus::placeholder { color:transparent; }
   --k-color2: rgb(255,140,66);
   --bd_color: #d2d2d2 ;
 }
+
+.topBtn{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  min-width: 60px;
+  min-height: 60px;
+  background: var(--k-color);
+  color: #fff;
+  border-radius: 10px;
+  transition: 0.5s;
+  opacity: 0;
+  transform: scale(0);
+}
+
+@media screen and (max-width: 768px){
+  .topBtn{
+    min-width: 40px;
+    min-height: 40px;
+    font-size: 1.4rem;
+  }
+}

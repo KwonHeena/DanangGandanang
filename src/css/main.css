@@ -50,7 +50,7 @@ section .tit .more_view a::after {
   background-size: cover;
   vertical-align: middle;
   margin-left: 6px;
-  margin-top: -1px;
+  margin-top: -4px;
 }
 section .tit .more_view a:hover {
   color: #fff;

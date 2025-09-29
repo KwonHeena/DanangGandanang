@@ -1,15 +1,15 @@
-import { getJsonData } from './common.js';
+import { getJsonData } from "./common.js";
 
 // 수정코드
 export async function renderRestaurant() {
-  const restaurant = 'restaurant.html';
+  const restaurant = "restaurant.html";
   const data = await getJsonData(restaurant);
   console.log(data);
 
-  let recoList = document.getElementById('recoList');
-  let commonPop = document.querySelector('.common_pop');
+  let recoList = document.getElementById("recoList");
+  let commonPop = document.querySelector(".common_pop");
   data.forEach((res) => {
-    let recoli = document.createElement('li');
+    let recoli = document.createElement("li");
     recoli.innerHTML = `
       <button type="button" class="reco_ck_btn">
                 <div class="res_box">
@@ -32,15 +32,14 @@ export async function renderRestaurant() {
       recoList.appendChild(recoli);
     }
 
-    recoli.addEventListener('click', () => {
-      commonPop.style.display = 'block';
-      document.querySelector('body').style.overflow = 'hidden';
-      let mapBox = document.querySelector('.res_pop .map');
-      let mapTit = document.querySelector('.common_pop .tit_wrap p');
+    recoli.addEventListener("click", () => {
+      commonPop.style.display = "block";
+      document.querySelector("body").style.overflow = "hidden";
+      let mapBox = document.querySelector(".res_pop .map");
 
       for (let key in res) {
-        if (key.indexOf('ads') === 0) {
-          mapBox.innerHTML = '';
+        if (key.indexOf("ads") === 0) {
+          mapBox.innerHTML = "";
           // mapTit.textContent = data.title;
           mapBox.innerHTML += `
             <p>${res.map}</p>
@@ -49,18 +48,18 @@ export async function renderRestaurant() {
         }
       }
     });
-    let closeBtn = document.getElementById('close');
+    let closeBtn = document.getElementById("close");
     if (closeBtn) {
-      closeBtn.addEventListener('click', () => {
-        commonPop.style.display = 'none';
-        document.querySelector('body').style.overflow = 'auto';
+      closeBtn.addEventListener("click", () => {
+        commonPop.style.display = "none";
+        document.querySelector("body").style.overflow = "auto";
       });
     }
-    let pop_close = document.getElementById('btn_close');
+    let pop_close = document.getElementById("btn_close");
     if (pop_close) {
-      pop_close.addEventListener('click', () => {
-        commonPop.style.display = 'none';
-        document.querySelector('body').style.overflow = 'auto';
+      pop_close.addEventListener("click", () => {
+        commonPop.style.display = "none";
+        document.querySelector("body").style.overflow = "auto";
       });
     }
   });
