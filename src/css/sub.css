@@ -3,6 +3,9 @@
 #container {
   padding: 40px 0 58px;
 }
+.sub_wrap{
+  padding-top: 40px;
+}
 .sub_wrap .sub_tit {
   min-height: 250px;
   display: flex;
@@ -49,10 +52,16 @@
   #container {
     padding: 30px 0 58px;
   }
+  .sub_wrap {
+    padding-top: 30px;
+  }
 }
 @media screen and (max-width: 768px) {
   #container {
     padding: 0px 0 60px;
+  }
+  .sub_wrap {
+    padding-top: 60px;
   }
   .sub_container {
     margin: 60px auto 0;
@@ -251,6 +260,10 @@
   background: var(--k-color);
   color: #fff;
   border-radius: 5px;
+  transition: 0.3s;
+}
+.common_pop .pop_inner .btn_wrap button:hover{
+  background: rgb(0 137 157);
 }
 @media screen and (max-width: 768px) {
   .common_inform {
