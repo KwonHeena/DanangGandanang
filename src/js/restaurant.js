@@ -4,7 +4,6 @@ import { getJsonData } from "./common.js";
 export async function renderRestaurant() {
   const restaurant = "restaurant.html";
   const data = await getJsonData(restaurant);
-  console.log(data);
 
   let recoList = document.getElementById("recoList");
   let commonPop = document.querySelector(".common_pop");
@@ -40,7 +39,6 @@ export async function renderRestaurant() {
       for (let key in res) {
         if (key.indexOf("ads") === 0) {
           mapBox.innerHTML = "";
-          // mapTit.textContent = data.title;
           mapBox.innerHTML += `
             <p>${res.map}</p>
             <iframe src="${res[key]}">
@@ -62,6 +60,10 @@ export async function renderRestaurant() {
         document.querySelector("body").style.overflow = "auto";
       });
     }
+
+    document.querySelector("body").addEventListener("click", function (e) {
+      let t = e.target;
+    });
   });
 }
 renderRestaurant();

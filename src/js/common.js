@@ -46,7 +46,6 @@ links.forEach((link) =>
     const page = link.getAttribute("data-page");
     await changePages(page);
 
-    console.log(page); // page: hotel.html, restaurant.html
     if (page === "hotel.html") renderHotel();
     if (page === "restaurant.html") renderRestaurant();
     if (page === "weather.html") renderWeather();
@@ -97,7 +96,6 @@ body.appendChild(topBtn);
 
 window.addEventListener("scroll", () => {
   let scY = window.scrollY;
-  console.log(scY);
   if (scY > 50) {
     topBtn.style.transform = "scale(1)";
     topBtn.style.opacity = "1";

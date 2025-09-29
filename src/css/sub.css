@@ -52,7 +52,7 @@
 }
 @media screen and (max-width: 768px) {
   #container {
-    padding: 30px 0 80px;
+    padding: 0px 0 60px;
   }
   .sub_container {
     margin: 60px auto 0;
@@ -79,10 +79,10 @@
   display: flex;
   gap: 25px;
   position: relative;
+  padding-bottom: 40px;
 }
 .hotel_wrap > ul li:not(:last-of-type) {
   border-bottom: 1px solid var(--bd_color);
-  padding-bottom: 40px;
 }
 .hotel_wrap > ul li .go_site {
   position: absolute;
@@ -269,6 +269,7 @@
   .hotel_wrap > ul li {
     flex-direction: column;
     align-items: center;
+    padding-bottom: 35px;
   }
   .hotel_wrap > ul li:not(:last-of-type) {
     padding-bottom: 35px;
@@ -311,6 +312,9 @@
 }
 
 /* 맛집 */
+.restaurant_wrap{
+  padding-bottom: 55px;
+}
 .restaurant_wrap .inner_wrap > ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -334,19 +338,6 @@
   height: 100%;
   position: relative;
 }
-/* .restaurant_wrap .inner_wrap > ul > li .reco_ck_btn::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  inset: 0;
-  border: 2px solid transparent;
-  border-radius: 10px;
-  transition: all 0.3s;
-} */
-/* .restaurant_wrap .inner_wrap > ul > li .reco_ck_btn:hover:before {
-  border-color: var(--k-color);
-} */
 .restaurant_wrap .inner_wrap > ul > li .res_box .img_wrap {
   max-width: 300px;
   width: 100%;
@@ -381,18 +372,19 @@
   font-weight: 500;
 }
 .res_pop .map p {
+  display: flex;
+  min-height: 45px;
+  align-items: center;
   background: #eaeaea;
   width: 100%;
-  line-height: 45px;
+  padding: 10px 20px;
   font-size: 1.6rem;
-  padding: 0 20px;
   border-radius: 10px 10px 0 0;
 }
 .res_pop .map iframe {
   width: 100%;
   min-height: 300px;
   border: none;
-  margin-top: 15pxx;
 }
 @media screen and (max-width: 1024px) {
   .restaurant_wrap .inner_wrap > ul {
@@ -400,6 +392,9 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .restaurant_wrap {
+    padding-bottom: 35px;
+  }
   .restaurant_wrap .inner_wrap > ul {
     gap: 25px;
   }
@@ -408,6 +403,9 @@
   }
   .restaurant_wrap .inner_wrap > ul > li .res_box .inform_wrap li + li {
     margin-top: 5px;
+  }
+  .res_pop .map iframe {
+    min-height: 250px;
   }
 }
 @media screen and (max-width: 500px) {
@@ -427,6 +425,7 @@
 /* 날씨 */
 .weather_wrap {
   text-align: center;
+  padding-bottom: 55px;
 }
 .weather_wrap .t_txt {
   font-size: 2.8rem;
@@ -539,6 +538,9 @@
 }
 
 @media screen and (max-width: 768px) {
+  .weather_wrap {
+    padding-bottom: 35px;
+  }
   .weather_wrap .weather_inner {
     margin: 35px auto 0;
     flex-direction: column;
@@ -588,8 +590,8 @@
 .exchange_wrap {
   background: #f3f3f3;
   text-align: center;
-  padding: 80px 20px 150px;
-  margin-bottom: -120px;
+  padding: 80px 20px 120px;
+  margin-bottom: -58px;
 }
 .exchange_wrap .t_txt {
   font-size: 2.8rem;
@@ -664,7 +666,7 @@
 @media screen and (max-width: 768px) {
   .exchange_wrap {
     padding: 60px 20px 80px;
-    margin-bottom: -80px;
+    margin-bottom: -60px;
   }
   .exchange_wrap .calc_wrap {
     margin: 35px auto 0;
